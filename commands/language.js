@@ -3,8 +3,8 @@ const db = require('quick.db');
 
 exports.run = async(client, message, args) => {
   const prefix = "mb!";
-  const language = db.fetch(`guild_language_${message.guild.id}`);
-  if (language == null) language = 0;
+  const language = await db.fetch(`guild_language_${message.guild.id}`);
+  if (language === null) language = 0;
   
   const nothing = new Discord.RichEmbed()
     .setAuthor("Language", message.guild.iconURL)
