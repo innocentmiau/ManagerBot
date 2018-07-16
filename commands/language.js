@@ -13,4 +13,12 @@ exports.run = async(client, message, args) => {
     .setDescription(`Current Language: **${utils.getLanguage(language)}**!`
                    + `\n\nUse: \`${prefix}language <new_language>\``);
   if (args.length === 0) return message.channel.send(nothing);
+  if (args.length === 1) {
+    let amount = parseInt(args[0]);
+    if (Number.isInteger(amount)) {
+        db.set(`guild_language_${message.guild.id}`, amount);
+        language = await db.fetch(`guild_language_${message.guild.id}`);
+        message.channel.send(`New language **${utils.getLanguage(language)}**!`);
+    }
+  }
 }
