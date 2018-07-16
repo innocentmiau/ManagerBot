@@ -23,7 +23,6 @@ client.on("message", async message => {
 		console.log(e);
 	} finally {
 	}
-	
-}
+});
 
 client.login(process.env.TOKEN);
