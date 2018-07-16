@@ -1,0 +1,9 @@
+{
+	"name": "Faqs",
+	"version": "1.0.0",
+	"description": "Metin2 Discord Bot",
+	"main": "Bot.js",
+	"dependencies": {
+		"discord.js": "^11.3.2"
+	}
+}
