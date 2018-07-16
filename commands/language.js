@@ -6,7 +6,6 @@ exports.run = async(client, message, args) => {
   const prefix = "mb!";
   var language = await db.fetch(`guild_language_${message.guild.id}`);
   if (language === null) language = 0;
-  const 
   
   const nothing = new Discord.RichEmbed()
     .setAuthor("Language", message.guild.iconURL)
