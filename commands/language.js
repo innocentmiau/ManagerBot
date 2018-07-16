@@ -8,6 +8,7 @@ exports.run = async(client, message, args) => {
   
   const nothing = Discord.RichEmbed()
     .setAuthor("Language", message.guild.iconURL)
+    .setColor([54, 57, 64])
     .setDescription("Current Language: **" + language + "**!"
                    + `\n\nUse: \`${prefix}language <new_language>\``);
   if (args.length === 0) return message.channel.send(nothing);
