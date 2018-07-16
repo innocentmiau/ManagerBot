@@ -4,6 +4,7 @@
 	"description": "Metin2 Discord Bot",
 	"main": "Bot.js",
 	"dependencies": {
-		"discord.js": "^11.3.2"
+		"discord.js": "^11.3.2",
+    		"quick.db": "^6.3.2"
 	}
 }
