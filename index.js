@@ -16,7 +16,7 @@ var con = mysql.createConnection({
 client.on("ready", () => {
 	console.log(`Bot has started, with ${client.users.size} users, in ${client.channels.size} channels of ${client.guilds.size} guilds.`);
 	client.user.setActivity(`${client.prefix}help | ${client.guilds.size} servers!`, {type: 'Playing'});
-	con.connect(function(err) {
+	con.connect(err => {
 		if (err) throw err;
 		console.log("Connected!");
 	});
