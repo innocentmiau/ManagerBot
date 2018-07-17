@@ -17,6 +17,8 @@
   "invite": "invite",
   "server": "server",
   "language": "server_settings/language",
-  "prefix": "server_settings/prefix"
-  "minecraft": "random/minecraft"
+  "prefix": "server_settings/prefix",
+  "minecraft": "random/minecraft",
+  "say": "admin/say",
+  "sayc": "admin/sayc"
 }
