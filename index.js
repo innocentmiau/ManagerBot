@@ -63,7 +63,7 @@ client.on("message", async message => {
 	const command = args.shift().toLowerCase();
 
 	try {
-		let commands = require(`./commands/${cmd.${command}}.js`);
+		let commands = require(`./commands/${cmd.command}.js`);
 		commands.run(client, message, args);
 	} catch(e) {
 		console.log(e);
