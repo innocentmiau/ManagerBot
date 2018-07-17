@@ -1,9 +1,8 @@
 const Discord = require('discord.js');
-const db = require('quick.db');
 const utils = require("../utils.js");
 
 exports.run = async (client, message, args) => {
-  var language = await db.fetch(`guild_language_${message.guild.id}`);
+  var language = 0;
   if (language === null) language = 0;
   if (language === 0) {
     const embed = new Discord.RichEmbed()
