@@ -2,7 +2,7 @@
 	"name": "Manager Bot",
 	"version": "1.0.0",
 	"description": "Manager Discord Bot",
-	"main": "Bot.js",
+	"main": "index.js",
 	"dependencies": {
 		"discord.js": "^11.3.2",
     		"quick.db": "^6.3.2",
