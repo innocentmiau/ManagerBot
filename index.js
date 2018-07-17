@@ -69,7 +69,13 @@ client.on("message", async message => {
 			let commands = require(`./commands/server_settings/${command}.js`);
 			commands.run(client, message, args);
 		} catch(e) {
-			console.log(e);
+			try {
+				let commands = require(`./commands/random/${command}.js`);
+				commands.run(client, message, args);
+			} catch(e) {
+				console.log(e);
+			} finally {
+			}
 		} finally {
 		}
 	} finally {
