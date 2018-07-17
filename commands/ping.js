@@ -1,5 +1,8 @@
 const Discord = require('discord.js');
 
+var language = await db.fetch(`guild_language_${message.guild.id}`);
+if (language === null) language = 0;
+
 exports.run = async (client, message, args) => {
   const m = await message.channel.send("Calculating...");
   let embed = new Discord.RichEmbed()
