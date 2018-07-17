@@ -1,4 +1,6 @@
 const Discord = require('discord.js');
+const db = require('quick.db');
+const utils = require("../utils.js");
 
 var language = await db.fetch(`guild_language_${message.guild.id}`);
 if (language === null) language = 0;
