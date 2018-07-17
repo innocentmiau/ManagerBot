@@ -1,5 +1,6 @@
 const Discord = require("discord.js");
 const config = require("./config.json");
+const cmd = require("./cmd.json");
 var mysql = require('mysql');
 
 const client = new Discord.Client();
@@ -62,11 +63,7 @@ client.on("message", async message => {
 	const command = args.shift().toLowerCase();
 
 	try {
-		let commands = require(`./commands/${command}.js`);
-		let commands = require(`./commands/server_settings/${command}.js`);
-		let commands = require(`./commands/random/${command}.js`);
-		let commands = require(`./commands/admin/${command}.js`);
-		let commands = require(`./commands/sources/${command}.js`);
+		let commands = require(`./commands/${cmd.${command}}.js`);
 		commands.run(client, message, args);
 	} catch(e) {
 		console.log(e);
