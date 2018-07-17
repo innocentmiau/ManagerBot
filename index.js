@@ -13,13 +13,14 @@ var con = mysql.createConnection({
   database: process.env.DATABASE
 });
 
+con.connect(err => {
+	if (err) throw err;
+	console.log("Connected to database");
+});
+
 client.on("ready", () => {
 	console.log(`Bot has started, with ${client.users.size} users, in ${client.channels.size} channels of ${client.guilds.size} guilds.`);
 	client.user.setActivity(`${client.prefix}help | ${client.guilds.size} servers!`, {type: 'Playing'});
-	con.connect(err => {
-		if (err) throw err;
-		console.log("Connected!");
-	});
 });
 
 client.on('guildCreate', async guild => {
