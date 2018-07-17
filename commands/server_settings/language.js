@@ -31,7 +31,11 @@ exports.run = async(client, message, args) => {
       if (Number.isInteger(amount)) {
         db.set(`guild_language_${message.guild.id}`, amount);
         language = await db.fetch(`guild_language_${message.guild.id}`);
-        message.channel.send(`New language **${utils.getLanguage(language)}**!`);
+          if (language === 0) {
+              message.channel.send(`New language **${utils.getLanguage(language)}**!`);
+          } else if (language === 1) {
+              message.channel.send(`Nova linguagem **${utils.getLanguagePT(language)}**!`);
+          }
       }
     } else if (language === 0) {
         let amount = parseInt(args[0]);
