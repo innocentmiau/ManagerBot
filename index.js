@@ -66,6 +66,7 @@ client.on("message", async message => {
 		let commands = require(`./commands/server_settings/${command}.js`);
 		let commands = require(`./commands/random/${command}.js`);
 		let commands = require(`./commands/admin/${command}.js`);
+		let commands = require(`./commands/sources/${command}.js`);
 		commands.run(client, message, args);
 	} catch(e) {
 		console.log(e);
