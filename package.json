@@ -1,5 +1,5 @@
 {
-	"name": "Manager Bot",
+	"name": "Manager",
 	"version": "1.0.0",
 	"description": "Manager Discord Bot",
 	"main": "index.js",
