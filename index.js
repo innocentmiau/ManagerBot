@@ -1,13 +1,28 @@
 const Discord = require("discord.js");
 const config = require("./config.json");
+var mysql = require('mysql');
 
 const client = new Discord.Client();
 
 client.prefix = config.prefix; // Attach prefix to client to be used later and everywhere
 
+var con = mysql.createConnection({
+  host: process.env.HOST,
+  user: process.env.USER,
+  password: process.env.PASSWORD
+});
+
 client.on("ready", () => {
 	console.log(`Bot has started, with ${client.users.size} users, in ${client.channels.size} channels of ${client.guilds.size} guilds.`);
 	client.user.setActivity(`${client.prefix}help | ${client.guilds.size} servers!`, {type: 'Playing'});
+	con.connect(function(err) {
+	if (err) throw err;
+	  console.log("Connected!");
+	  con.query(sql, function (err, result) {
+	  if (err) throw err;
+	    console.log("Result: " + result);
+	  });
+	});
 });
 
 client.on("message", async message => {
