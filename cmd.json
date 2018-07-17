@@ -15,5 +15,8 @@
   "help": "help",
   "bot": "bot",
   "invite": "invite",
-  "server": "server"
+  "server": "server",
+  "language": "server_settings/language",
+  "prefix": "server_settings/prefix"
+  "minecraft": "random/minecraft"
 }
