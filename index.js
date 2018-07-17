@@ -29,7 +29,7 @@ client.on('guildCreate', async guild => {
 	.setAuthor("New Server")
 	.setDescription("Name: **" + guild.name + "**"
                    	+ "\nOwner: **" + guild.owner.user.username + "**#" + guild.owner.user.discriminator
-                  	+ "\nMembers: **" + guild.memberCount + "**"))
+                  	+ "\nMembers: **" + guild.memberCount + "**")
 	.setThumbnail(guild.iconURL)
 	.setTimestamp();
 	const channel = client.channels.get('468683498568417282');
