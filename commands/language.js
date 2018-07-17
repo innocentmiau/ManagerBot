@@ -20,20 +20,20 @@ exports.run = async(client, message, args) => {
       .setAuthor("Linguagem", message.guild.iconURL)
       .setColor([54, 57, 64])
       .setDescription(`Linguagem Atual: **${utils.getLanguage(language)}**!`
-                     + `\n\nUsa: \`${prefix}language <nova_linguagem>\``);
+                     + `\n\nUso: \`${prefix}language <nova_linguagem>\``);
       message.channel.send(nothing);
     }
   }
   
   if (args.length === 1) {
-    if (language === 0) {
+    if (language === 1) {
       let amount = parseInt(args[0]);
       if (Number.isInteger(amount)) {
         db.set(`guild_language_${message.guild.id}`, amount);
         language = await db.fetch(`guild_language_${message.guild.id}`);
         message.channel.send(`New language **${utils.getLanguage(language)}**!`);
       }
-    } else if (language === 1) {
+    } else if (language === 0) {
         let amount = parseInt(args[0]);
           if (Number.isInteger(amount)) {
             db.set(`guild_language_${message.guild.id}`, amount);
