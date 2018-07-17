@@ -5,7 +5,6 @@
 	"main": "index.js",
 	"dependencies": {
 		"discord.js": "^11.3.2",
-    		"quick.db": "^6.3.2",
 		"mysql": "^2.15.0"
 	}
 }
