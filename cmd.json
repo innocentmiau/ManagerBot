@@ -4,5 +4,15 @@
   "php": "sources/php",
   "apache": "sources/apache",
   "ini": "sources/ini",
-  "css": "sources/css"
+  "css": "sources/css",
+  "perl": "sources/perl",
+  "nginx": "sources/nginx",
+  "json": "sources/json",
+  "bash": "sources/bash",
+  "ruby": "sources/ruby",
+  "python": "sources/python",
+  "support": "support",
+  "help": "help",
+  "bot": "bot",
+  "invite": "invite"
 }
