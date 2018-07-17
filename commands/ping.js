@@ -1,6 +1,7 @@
+const Discord = require('discord.js');
+
 exports.run = async (client, message, args) => {
-	const m = await message.channel.send("Calculating...");
-  const Discord = require('discord.js');
+  const m = await message.channel.send("Calculating...");
   let embed = new Discord.RichEmbed()
     .setAuthor("Latency!", client.user.displayAvatarURL)
     .setColor([54, 57, 64])
