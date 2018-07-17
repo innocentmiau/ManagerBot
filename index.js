@@ -6,15 +6,47 @@ const client = new Discord.Client();
 
 client.prefix = config.prefix; // Attach prefix to client to be used later and everywhere
 
+/*
 var con = mysql.createConnection({
   host: process.env.HOST,
   user: process.env.USER,
   password: process.env.PASSWORD
 });
+*/
 
 client.on("ready", () => {
 	console.log(`Bot has started, with ${client.users.size} users, in ${client.channels.size} channels of ${client.guilds.size} guilds.`);
 	client.user.setActivity(`${client.prefix}help | ${client.guilds.size} servers!`, {type: 'Playing'});
+});
+
+client.on('guildCreate', async guild => {
+	client.user.setActivity(`${client.prefix}help | ${client.guilds.size} servers!`, {type: 'Playing'});
+	const embed = new Discord.RichEmbed()
+	.setColor([0, 140, 0])
+	.setAuthor("New Server")
+	.setDescription("Name: **" + guild.name + "**"
+                   	+ "\nOwner: **" + guild.owner.user.username + "**#" + guild.owner.user.discriminator
+                  	+ "\nMembers: **" + guild.memberCount + "**"))
+	.setThumbnail(guild.iconURL)
+	.setTimestamp();
+	const channel = client.channels.get('468683498568417282');
+	if (!channel) return;
+	channel.send(embed);
+});
+
+client.on('guildDelete', async guild => {
+	client.user.setActivity(`${client.prefix}help | ${client.guilds.size} servers!`, {type: 'Playing'});
+	const embed = new Discord.RichEmbed()
+	.setColor([140, 0, 0])
+	.setAuthor("Bye Server")
+	.setDescription("Name: **" + guild.name + "**"
+                   	+ "\nOwner: **" + guild.owner.user.username + "**#" + guild.owner.user.discriminator
+                   	+ "\nMembers: **" + guild.memberCount + "**")
+	.setThumbnail(guild.iconURL)
+	.setTimestamp();
+	const channel = client.channels.get('468684109150158859');
+	if (!channel) return;
+	channel.send(embed);
 });
 
 client.on("message", async message => {
