@@ -3,19 +3,21 @@ const config = require("./config.json");
 
 const client = new Discord.Client();
 
+client.prefix = config.prefix; // Attach prefix to client to be used later and everywhere
+
 client.on("ready", () => {
 	console.log(`Bot has started, with ${client.users.size} users, in ${client.channels.size} channels of ${client.guilds.size} guilds.`);
-	client.user.setActivity(`mb!help | ${client.guilds.size} servers!`, {type: 'Playing'});
+	client.user.setActivity(`${client.prefix}help | ${client.guilds.size} servers!`, {type: 'Playing'});
 });
 
 client.on("message", async message => {
 	let msg = message.content.toLowerCase();
 	if (message.author.bot) return undefined;
-	
-	if (message.content.indexOf(config.prefix) !== 0) return;
-	const args = message.content.slice(config.prefix.length).trim().split(/ +/g);
+
+	if (message.content.indexOf(client.prefix) !== 0) return;
+	const args = message.content.slice(client.prefix.length).trim().split(/ +/g);
 	const command = args.shift().toLowerCase();
-	
+
 	try {
 		let commands = require(`./commands/${command}.js`);
 		commands.run(client, message, args);
