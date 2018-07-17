@@ -1,5 +1,4 @@
 const Discord = require("discord.js");
-const db = require('quick.db');
 const utils = require("../utils.js");
 
 exports.run = (client, message, args) => {
