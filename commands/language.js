@@ -8,12 +8,20 @@ exports.run = async(client, message, args) => {
   if (language === null) language = 0;
   
   if (args.length === 0) {
-   const nothing = new Discord.RichEmbed()
+    if (language === 0)
+       const nothing = new Discord.RichEmbed()
       .setAuthor("Language", message.guild.iconURL)
       .setColor([54, 57, 64])
       .setDescription(`Current Language: **${utils.getLanguage(language)}**!`
                      + `\n\nUse: \`${prefix}language <new_language>\``);
-    message.channel.send(nothing);
+       message.channel.send(nothing);
+    } else if (language === 1) {
+      const nothing = new Discord.RichEmbed()
+      .setAuthor("Linguagem", message.guild.iconURL)
+      .setColor([54, 57, 64])
+      .setDescription(`Linguagem Atual: **${utils.getLanguage(language)}**!`
+                     + `\n\nUsa: \`${prefix}language <nova_linguagem>\``);
+      message.channel.send(nothing);
   }
   
   if (args.length === 1) {
