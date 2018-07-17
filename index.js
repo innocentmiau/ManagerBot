@@ -21,7 +21,7 @@ client.on("message", async message => {
 		commands.run(client, message, args);
 	} catch(e) {
 		try {
-			let commands = require(`.commands/server_settings/${command}.js`);
+			let commands = require(`./commands/server_settings/${command}.js`);
 			commands.run(client, message, args);
 		} catch(e) {
 			console.log(e);
