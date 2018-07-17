@@ -7,6 +7,16 @@ function getLanguage(number) {
   }
 }
 
+function getLanguagePT(number) {
+  switch (number) {
+    case 1:
+      return "Português";
+    default:
+      return "Inglês";
+  }
+}
+
 module.exports = {
-  getLanguage: getLanguage
+  getLanguage: getLanguage,
+  getLanguagePT: getLanguagePT
 }
