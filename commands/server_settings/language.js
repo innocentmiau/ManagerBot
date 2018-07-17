@@ -1,5 +1,5 @@
 const Discord = require('discord.js');
-const utils = require("./../utils.js");
+const utils = require("../../utils.js");
 
 exports.run = async(client, message, args) => {
   const prefix = client.prefix;
