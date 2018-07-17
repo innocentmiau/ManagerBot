@@ -9,7 +9,8 @@ client.prefix = config.prefix; // Attach prefix to client to be used later and e
 var con = mysql.createConnection({
   host: process.env.HOST,
   user: process.env.USER,
-  password: process.env.PASSWORD
+  password: process.env.PASSWORD,
+  database: process.env.DATABASE
 });
 
 client.on("ready", () => {
