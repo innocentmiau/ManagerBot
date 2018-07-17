@@ -1,7 +1,7 @@
 {
-	"name": "Faqs",
+	"name": "Manager Bot",
 	"version": "1.0.0",
-	"description": "Metin2 Discord Bot",
+	"description": "Manager Discord Bot",
 	"main": "Bot.js",
 	"dependencies": {
 		"discord.js": "^11.3.2",
